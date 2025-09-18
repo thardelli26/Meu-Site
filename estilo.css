@@ -1,0 +1,154 @@
+:root{
+  --bg:#f5f7fa;
+  --card:#ffffff;
+  --primary:#0f6cff;
+  --muted:#6b7280;
+  --text:#0f1724;
+  --radius:10px;
+  --container-width:1100px;
+  --gap:20px;
+  --max-width-mobile:920px;
+  font-size:16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.5;
+}
+
+/* central */
+.container{
+  width:90%;
+  max-width:var(--container-width);
+  margin:0 auto;
+}
+
+/* cabeçalho */
+.site-header{
+  background:linear-gradient(90deg,#ffffffcc, #f0f6ffcc);
+  border-bottom:1px solid #e6eefb;
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 0;
+}
+.site-title{
+  margin:0;
+  font-size:1.15rem;
+  letter-spacing:0.4px;
+}
+.main-nav a{
+  margin-left:16px;
+  text-decoration:none;
+  color:var(--muted);
+  font-weight:600;
+}
+.main-nav a:hover{color:var(--primary)}
+
+/* topo */
+.hero{
+  display:flex;
+  gap:var(--gap);
+  align-items:center;
+  padding:36px 0;
+}
+.hero-left{flex:1}
+.hero-right{width:220px;flex-shrink:0;text-align:center}
+.profile-photo{
+  width:160px;
+  height:160px;
+  object-fit:cover;
+  border-radius:50%;
+  box-shadow:0 6px 18px rgba(15,20,36,0.08);
+  border:4px solid white;
+}
+
+/* textos */
+.lead{font-size:1.05rem;color:var(--muted)}
+.btn{
+  display:inline-block;
+  margin-right:10px;
+  margin-top:12px;
+  padding:10px 14px;
+  background:var(--primary);
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:700;
+}
+.btn-outline{
+  background:transparent;
+  color:var(--primary);
+  border:2px solid var(--primary);
+}
+
+/* Selecione */
+.section{
+  padding:28px 0;
+}
+.section-title{
+  margin:0 0 14px 0;
+  font-size:1.05rem;
+  color:var(--text);
+}
+
+/* Cartões e listas */
+.card-list{display:grid;gap:16px}
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:16px;
+  box-shadow:0 6px 18px rgba(15,20,36,0.03);
+}
+.muted{color:var(--muted);font-size:0.95rem}
+.timeline{display:flex;flex-direction:column;gap:12px}
+.timeline-item{background:var(--card);padding:12px;border-radius:8px;box-shadow:0 4px 12px rgba(15,20,36,0.03)}
+
+/* Projetos */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.project{background:var(--card);padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(15,20,36,0.03)}
+
+/* habilidades */
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+.skill{background:var(--card);padding:12px;border-radius:8px;}
+
+/* Contato */
+.contact-cards{display:flex;gap:12px;flex-wrap:wrap}
+.contact-card{background:var(--card);padding:12px;border-radius:8px;min-width:220px;box-shadow:0 6px 18px rgba(15,20,36,0.03)}
+.contact-card a{color:var(--primary);text-decoration:none}
+
+/* rodapé */
+.site-footer{padding:18px 0;background:transparent;color:var(--muted);border-top:1px solid #eef6ff}
+.site-footer p{margin:0;text-align:center;font-size:0.95rem}
+
+/* Responsivo */
+@media (max-width: 920px){
+  .hero{flex-direction:column;align-items:flex-start}
+  .hero-right{width:100%}
+  .grid{grid-template-columns:1fr; }
+  .skills-grid{grid-template-columns:repeat(2,1fr)}
+  .main-nav{display:none}
+}
+
+@media (max-width: 480px){
+  :root{font-size:15px}
+  .skills-grid{grid-template-columns:1fr}
+  .header-inner{padding:12px 0}
+}
